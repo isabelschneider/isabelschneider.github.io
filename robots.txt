@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+SITEMAP: isabelschneider.net/sitemap.xml
