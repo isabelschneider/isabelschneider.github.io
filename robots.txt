@@ -1,3 +1,3 @@
 User-agent: *
 Disallow:
-SITEMAP: isabelschneider.net/sitemap.xml
+SITEMAP: isabelschneider.com/sitemap.xml
