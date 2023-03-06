@@ -57,14 +57,46 @@ var SiteFilesMap = {"page-1403784258535":"https://storage.googleapis.com/wzukuse
       width: 100%;
       overflow-y: hidden !important;
     }
+
+    /* This is the CSS for an alert message showing up on the screen. */
+
+    .alert {
+      padding: 20px;
+      background-color: #f44336;
+      color: white;
+      opacity: 1;
+      transition: opacity 0.6s;
+      margin-bottom: 15px;
+    }
+
+    .alert.success {background-color: #04AA6D;}
+    .alert.info {background-color: #2196F3;}
+    .alert.warning {background-color: #ff9800;}
+
+    .closebtn {
+      margin-left: 15px;
+      color: white;
+      font-weight: bold;
+      float: right;
+      font-size: 22px;
+      line-height: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .closebtn:hover {
+      color: black;
+    }
+
   </style>
 
   <script type="text/javascript">
     var DynamicPageContent = null;
     var DBSiteMetaData = {
       'pagesStructureInformation':{
-        'pagesData':{"1403784258535":{"metaTags":"","headerCode":"","footerCode":"","tags":[],"id":"1403784258535","title":"Home","pageTitle":"","description":"","keyWords":"","index":1,"isHomePage":true,"shareStyle":true,"useNameASTitle":false,"supportsMobileStates":true,"urlAlias":"","useNameASUrl":false,"useDefaultTitle":false},"1405553424582":{"metaTags":"","headerCode":"","footerCode":"","tags":[],"id":"1405553424582","title":"Art","pageTitle":"WEDDINGS","description":"","keyWords":"","index":3,"isHomePage":false,"shareStyle":true,"useNameASTitle":true,"supportsMobileStates":true,"urlAlias":"art","useNameASUrl":true,"useDefaultTitle":false},"1405553426710":{"metaTags":"","headerCode":"","footerCode":"","tags":[],"id":"1405553426710","title":"Design","pageTitle":"PORTRAIT","description":"","keyWords":"","index":4,"isHomePage":false,"shareStyle":true,"useNameASTitle":true,"supportsMobileStates":true,"urlAlias":"design","useNameASUrl":true,"useDefaultTitle":false},"1405543174614":{"metaTags":"","headerCode":"","footerCode":"","tags":[],"id":"1405543174614","title":"About","pageTitle":"CONTACT","description":"","keyWords":"","index":5,"isHomePage":false,"shareStyle":true,"useNameASTitle":true,"supportsMobileStates":true,"urlAlias":"about","useNameASUrl":false,"useDefaultTitle":false},"id1541556352437":{"metaTags":"","headerCode":"","footerCode":"","tags":[],"id":"id1541556352437","title":"Conservation","pageTitle":"","description":"","keyWords":"","index":2,"isHomePage":false,"urlAlias":"conservation","useNameASUrl":true,"supportsMobileStates":true,"shareStyle":true}},
+        'pagesData':{"1403784258535":{"metaTags":"","headerCode":"","footerCode":"","tags":[],"id":"1403784258535","title":"Home","pageTitle":"","description":"","keyWords":"","index":1,"isHomePage":true,"shareStyle":true,"useNameASTitle":false,"supportsMobileStates":true,"urlAlias":"","useNameASUrl":false,"useDefaultTitle":false},"1405553424582":{"metaTags":"","headerCode":"","footerCode":"","tags":[],"id":"1405553424582","title":"Art","pageTitle":"Art","description":"","keyWords":"","index":3,"isHomePage":false,"shareStyle":true,"useNameASTitle":true,"supportsMobileStates":true,"urlAlias":"art","useNameASUrl":true,"useDefaultTitle":false},"1405553426710":{"metaTags":"","headerCode":"","footerCode":"","tags":[],"id":"1405553426710","title":"Design","pageTitle":"Design","description":"","keyWords":"","index":4,"isHomePage":false,"shareStyle":true,"useNameASTitle":true,"supportsMobileStates":true,"urlAlias":"design","useNameASUrl":true,"useDefaultTitle":false},"1405543174614":{"metaTags":"","headerCode":"","footerCode":"","tags":[],"id":"1405543174614","title":"About","pageTitle":"About","description":"","keyWords":"","index":5,"isHomePage":false,"shareStyle":true,"useNameASTitle":true,"supportsMobileStates":true,"urlAlias":"about","useNameASUrl":false,"useDefaultTitle":false},"id1541556352437":{"metaTags":"","headerCode":"","footerCode":"","tags":[],"id":"id1541556352437","title":"Conservation","pageTitle":"","description":"","keyWords":"","index":2,"isHomePage":false,"urlAlias":"conservation","useNameASUrl":true,"supportsMobileStates":true,"shareStyle":true}},
         'pagesHierarchies':{}      },
+        // Note: Page structure, including metadata and the actual URL links, appears to be controlled by pagesData instead of by the normal HTML code.
       'siteStructureInformation':{
         'masterPages': {"1343569893636":{"pagesIDs":["1403784258535","1405553424582","1405553426710","1405543174614","id1541556352437"]}},
         'listsInformation':{}      }
@@ -88,6 +120,11 @@ var SiteFilesMap = {"page-1403784258535":"https://storage.googleapis.com/wzukuse
             <nav class="site-element" element-id="id1487109314569" element-type="PagesMenu">
                 <nav><a href="/">Home</a><a href="/conservation">Conservation</a><a href="/art">Art</a><a href="/design">Design</a><a href="/about">About</a></nav>
             </nav>
+        </div>
+        <!-- This contains the HTML for the alert. -->
+        <div class="alert info">
+          <span class="closebtn">&times;</span>  
+          <strong>Notice!</strong> Please bear with us, as this site is currently being updated. We expect these updates to complete in Spring 2023.
         </div>
     </header>
     <section class="site-element" element-id="id1487707685807" element-type="SectionElement">
@@ -122,5 +159,20 @@ var SiteFilesMap = {"page-1403784258535":"https://storage.googleapis.com/wzukuse
             </nav>
         </div>
     </footer>
-</div></body>
+</div>
+<!-- This contains the JavaScript for the alert message. -->
+<script>
+  var close = document.getElementsByClassName("closebtn");
+  var i;
+  
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function(){
+      var div = this.parentElement;
+      div.style.opacity = "0";
+      setTimeout(function(){ div.style.display = "none"; }, 600);
+    }
+  }
+  </script>
+
+</body>
 </html>
